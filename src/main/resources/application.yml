@@ -1,0 +1,28 @@
+server:
+  error:
+    include-message: always
+    include-binding-errors: always
+    include-stacktrace: ON_PARAM
+    include-exception: false
+
+  port: 9090
+
+  trace: true
+
+spring:
+  datasource:
+    password: boniface
+    url: jdbc:mysql://localhost:3306/martin?allowPublicKeyRetrieval=true&useUnicode=true&characterEncoding=utf8&useSSL=false&autoReconnect=true
+    username: boniface
+  jpa:
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.MySQL8Dialect
+        format_sql: true
+    show-sql: true
+
+  mvc:
+    pathmatch:
+      matching-strategy: ant_path_matcher
